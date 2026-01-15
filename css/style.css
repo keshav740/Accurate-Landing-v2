@@ -1,0 +1,379 @@
+/* Main Styles */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-primary {
+    color: #1e40af;
+}
+
+/* Your deep blue */
+.bg-primary {
+    background-color: #2563eb;
+}
+
+.swiper-pagination-bullet-active {
+    background: #2563eb !important;
+}
+
+/* Custom shape for the right background decoration */
+.blue-blob {
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Font Imports and Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+body {
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.gradient-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.gradient-4 {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* Mega Menu Styles */
+/* Smooth Mega Menu Transition */
+.mega-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(10px);
+}
+
+.group:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Hide scrollbar for mobile navigation */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Hero Animations */
+/* UPWARD MOTION: Travels from 0 to -50% (the height of one set) */
+@keyframes marquee-vertical {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+/* DOWNWARD MOTION: Travels from -50% back to 0 */
+@keyframes marquee-vertical-reverse {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.animate-marquee-vertical {
+    animation: marquee-vertical 40s linear infinite;
+}
+
+.animate-marquee-vertical-reverse {
+    animation: marquee-vertical-reverse 40s linear infinite;
+}
+
+/* Pause animation on hover for better user experience */
+.animate-marquee-vertical:hover,
+.animate-marquee-vertical-reverse:hover {
+    animation-play-state: paused;
+}
+
+/* Mobile Marquee Animations */
+@keyframes marquee-horizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-horizontal-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animate-marquee-mobile {
+    animation: marquee-horizontal 30s linear infinite;
+}
+
+.animate-marquee-mobile-reverse {
+    animation: marquee-horizontal-reverse 30s linear infinite;
+}
+
+.animate-marquee-mobile:hover,
+.animate-marquee-mobile-reverse:hover {
+    animation-play-state: paused;
+}
+
+/* Bounce Animation */
+@keyframes bounce-slow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+}
+
+/* Tabs Styles */
+.prog-tab {
+    flex-shrink: 0;
+}
+
+.prog-tab.active {
+    background-color: white !important;
+    color: #2563eb !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25) !important;
+    transform: translateY(-1px);
+}
+
+/* Mobile: Bottom border, Desktop: Left border */
+@media (max-width: 1023px) {
+    .prog-tab {
+        border-bottom-width: 4px !important;
+        border-left-width: 0 !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .prog-tab {
+        border-left-width: 4px !important;
+        border-bottom-width: 0 !important;
+    }
+}
+
+/* Animations for Tabs */
+.animate-in {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+.fade-in {
+    animation-name: fadeIn;
+}
+
+.slide-in-from-bottom-4 {
+    animation-name: slideInBottom;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Slider and Gradients */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.bg-custom-gradient {
+    background: linear-gradient(135deg, #e0e7e1 0%, #f3f4f6 100%);
+}
+
+.btn-gradient {
+    background: linear-gradient(90deg, #1867f8 0%, #1bb7ff 100%);
+}
+
+/* Accordion Vertical Text */
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+/* Smooth transition for the flex-grow property */
+.accordion-item {
+    transition: flex 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Globe Animation */
+.globe-spin {
+    animation: globe-rotate 12s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes globe-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Testimonial Thumbs */
+.active-thumb {
+    border: 3px solid white !important;
+    transform: scale(1.1);
+    filter: grayscale(0) !important;
+    opacity: 1 !important;
+}
+
+.indicator-line {
+    height: 4px;
+    width: 0%;
+    background-color: white;
+    transition: width 0.3s ease;
+    margin-top: 4px;
+    border-radius: 2px;
+}
+
+.active-thumb+.indicator-line {
+    width: 100%;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gallery / Bento Grid */
+:root {
+    --brand-blue: #2563eb;
+    --slate-900: #0f172a;
+    --slate-500: #64748b;
+}
+
+.font-jakarta {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.gallery-card {
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-card img {
+    transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.06) rotate(0.5deg);
+}
+
+.glass-overlay {
+    background: linear-gradient(to top,
+            rgba(15, 23, 42, 0.92) 0%,
+            rgba(15, 23, 42, 0.45) 50%,
+            transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.gallery-card:hover .glass-overlay {
+    opacity: 1;
+}
+
+.bento-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 160px;
+    gap: 1.25rem;
+}
+
+.feature-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.feature-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.feature-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+@media (max-width: 1024px) {
+    .bento-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+    }
+
+    .feature-large,
+    .feature-tall,
+    .feature-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .bento-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+    }
+}
