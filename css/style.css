@@ -237,9 +237,11 @@ body {
 }
 
 /* Accordion Vertical Text */
-.vertical-text {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
+@media (min-width: 768px) {
+    .vertical-text {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
 }
 
 /* Smooth transition for the flex-grow property */
